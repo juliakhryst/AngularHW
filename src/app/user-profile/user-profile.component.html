@@ -1,0 +1,20 @@
+<div class="userdata-container" *ngIf="selectedUser?.userData">
+  <div class="user-header">
+    <img [src]="selectedUser.userData.avatar_url" alt="user-pic" class="user-pic">
+    <h2>{{selectedUser.userData.login}}</h2>
+    <a [href]="selectedUser.userData.html_url">View on Github</a>
+  </div>
+
+  <div class="user-details-sec">
+    <div class="info"><i class="far fa-user"></i>{{selectedUser.userData.name}}</div>
+    <div class="info"><i class="far fa-clock"></i>{{selectedUser.userData.created_at | date: 'longDate'}}</div>
+    <div *ngIf="selectedUser.userData.location" class="info"><i class="fas fa-map-marker-alt"></i>{{selectedUser.userData.location}}</div>
+    <div *ngIf="selectedUser.userData.company" class="info"><i class="fas fa-suitcase"></i>{{selectedUser.userData.company}}</div>
+    <div *ngIf="selectedUser.userData.email" class="info"><i class="fas fa-envelope"></i>{{selectedUser.userData.email}}</div>
+  </div>
+  <div class="repos-container" *ngIf="selectedUser?.repos">
+    <h3>Repos</h3>
+    <hr>
+    <a *ngFor="let repo of selectedUser?.repos" [href]="repo.html_url">{{repo.full_name}}</a>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="search-container">
+  <form class="search-form">
+    <label for="search-input" class="search-label">Search Users</label>
+    <input type="text" placeholder="username" id="search-input" [(ngModel)]="userName" name="userName">
+    <button type="button" class="btn success" (click)="searchUser(userName, currentPage)">Search</button>
+  </form>
+</div>
+
+<div class="list-container" *ngIf="userList">
+  <div *ngFor="let user of userList" class="users-item">
+    <div class="user-main-info">
+      <img [src]="user.avatar_url" alt="user-img" class="user-avatar">
+      <span>{{user.login}}</span>
+    </div>
+    <div class="links">
+      <a [routerLink]="['/user', user.id]">View details</a>
+      <a [href]="user.html_url">Open on Github</a>
+    </div>
+  </div>
+
+  <div class="pagination">
+    <button (click)="prev()" class="default">< Previous</button>
+    <button (click)="next()" class="default">Next ></button>
+  </div>
+
+</div>
+
+<div *ngIf="!userList.length" class="error-message">
+  <h3>No users found!</h3>
+  <h4 *ngIf="errorMessage">{{errorMessage}}</h4>
+</div>

@@ -1,0 +1,21 @@
+h1{
+    color: green;
+    text-align: center;
+}
+
+.welcome-container{
+    display: flex;
+    margin: 40px;
+}
+
+.welcome-pic{
+    flex-grow: 1;
+    // max-width: 50%;
+}
+
+.welcome-text{
+    flex-grow: 1;
+    margin: 0 25px 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14 px;
+}

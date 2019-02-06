@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+button {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 4px;
+    padding: 10px 20px;
+
+    &.success {
+        color: #fff;
+        background-color: #28a745;
+        border-color: #28a745;
+    }
+
+    &.default {
+        color: #fff;
+        background-color: #17a2b8;
+        border-color: #17a2b8;
+    }
+}
